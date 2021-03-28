@@ -1,0 +1,99 @@
+
+<style>
+   :root {
+	--clr-prime-1: #eeeeee;
+	--clr-prime-2: #32e0c4;
+	--clr-prime-21: #2fcab0;
+	--clr-prime-3: #393e46;
+	--clr-prime-4: #222831;
+	--dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.514);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	position: relative;
+}
+
+.center {
+	position: relative;
+	transform: translate(10vw, 5vh);
+}
+
+.notificationbox {
+	border-radius: 5px;
+	background-color: var(--clr-prime-4);
+	color: var(--clr-prime-1);
+	width: 80vw;
+	height: 70vh;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.notificationbox {
+	overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+	background: transparent; /* make scrollbar transparent */
+}
+
+.notification {
+	border-radius: 5px;
+	background-color: var(--clr-prime-1);
+	padding: 5px;
+	margin: 10px;
+	color: var(--clr-prime-4);
+	display: flex;
+	align-items: center;
+}
+
+.n1,
+.n2,
+.n3,
+.n4 {
+	/* padding: 10px; */
+	margin-right: 20px;
+	flex: 2;
+}
+
+.n1 {
+	flex: 5;
+}
+
+.n2,
+.n3 {
+	margin-top: 10px;
+}
+.notification h3 {
+	font-size: 1.5rem;
+}
+
+.clicked {
+	background-color: var(--clr-prime-3);
+	color: var(--clr-prime-1);
+}
+.val {
+	color: var(--clr-prime-21);
+}
+
+@media screen and (max-width: 1500px) {
+	.notification h2 {
+		font-size: 2rem;
+	}
+}
+
+@media screen and (max-width: 1250px) {
+	.notification h2 {
+		font-size: 1.3rem;
+	}
+	.notification h3 {
+		font-size: 1rem;
+	}
+}
+ 
+</style> 

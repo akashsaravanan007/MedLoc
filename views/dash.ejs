@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8487b2c089.js" crossorigin="anonymous"></script>
+    <!-- local css -->
+    <%- include('./partials/head.ejs')  %>
+    <%- include('./partials/dashcss.ejs')  %>
+</head>
+<body>
+    <%- include('./partials/nav.ejs',{navlogout:navlogut})  %>
+    
+    <section>
+        <div class="center">
+            <h1>DASHBOARD</h1>
+            <div class="notificationbox">
+                <div class="notification">
+                    <div class="n1">
+                        <h2>task reached the due date</h2>
+                    </div>
+                    <div class="n2">
+                        <h3>Name</h3>
+                        <p class="val">adding the classes</p>
+                    </div>
+                    <div class="n3">
+                        <h3>Leader</h3>
+                        <p class="val">balamurugan213</p>
+                    </div>
+                    <div class="n4">
+                        <button class="btnm">Join</button>
+                    </div>
+                </div>
+                <div class="notification clicked">
+                    <div class="n1">
+                        <h2>Request to join project</h2>
+                    </div>
+                    <div class="n2">
+                        <h3>Name</h3>
+                        <p class="val">Music sana</p>
+                    </div>
+                    <div class="n3">
+                        <h3>Leader</h3>
+                        <p class="val">balamurugan213</p>
+                    </div>
+                    <div class="n4">
+                        <button class="btnm">Join</button>
+                    </div>
+                </div>
+                <div class="notification">
+                    <div class="n1">
+                        <h2>New Meeting scheduled</h2>
+                    </div>
+                    <div class="n2">
+                        <h3>Project</h3>
+                        <p class="val">Music sana</p>
+                    </div>
+                    <div class="n3">
+                        <h3>Time</h3>
+                        <p class="val">21/05/2021</p>
+                    </div>
+                    <div class="n4">
+                        <button class="btnm">Join</button>
+                    </div>
+                </div>
+                <div class="notification clicked">
+                    <div class="n1">
+                        <h2>Request to join project</h2>
+                    </div>
+                    <div class="n2">
+                        <h3>Name</h3>
+                        <p class="val">Music sana</p>
+                    </div>
+                    <div class="n3">
+                        <h3>Leader</h3>
+                        <p class="val">balamurugan213</p>
+                    </div>
+                    <div class="n4">
+                        <button class="btnm updateStatus" onclick="seen()">Join</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const dat = document.querySelector('.data')
+        const navToggle = document.querySelector(
+            '.nav-toggle'
+        )
+        const links = document.querySelector('.links')
+
+        navToggle.addEventListener('click', function () {
+
+            links.classList.toggle('show-links')
+        })
+
+        function notificationcard(n1, n2, n3, n4, status, type, nid) {
+
+
+
+            const notificationbox = document.querySelector('.notificationbox')
+
+            const ncard = document.createElement("div");
+            const ncardc1 = document.createElement("div");
+            const ncardc2 = document.createElement("div");
+            const ncardc3 = document.createElement("div");
+            const ncardc4 = document.createElement("div");
+            let attrid = document.createAttribute("data-id-notify");
+            attrid.value = nid;
+            //
+            const nT1 = document.createElement("h2");
+            const nT2 = document.createElement("h3");
+            const nT3 = document.createElement("h3");
+            const nT4 = document.createElement("button");
+
+            const nP2 = document.createElement("p");
+            const nP3 = document.createElement("p");
+            // 
+            ncard.classList.add("notification")
+            // ncard.setAttributeNode(attrid);
+            ncardc1.classList.add("n1")
+            ncardc2.classList.add("n2")
+            ncardc3.classList.add("n3")
+            ncardc4.classList.add("n4")
+            nT4.setAttributeNode(attrid);
+            nP2.classList.add("val")
+            nP3.classList.add("val")
+            nT4.classList.add("btnm")
+            nT4.classList.add("updateStatus")
+            nT4.innerText = "joined"
+
+            nT1.innerHTML = n1
+            nP2.innerText = n2
+            nP3.innerText = n3
+            nT4.innerText = n4
+
+            if (type == "1") {
+                nT2.innerText = "Name"
+                nT3.innerText = "Leader"
+            }
+            else if (type == "2") {
+                nT2.innerText = "Project"
+                nT3.innerText = "Time"
+            }
+            else {
+                nT2.innerText = "Project"
+                nT3.innerText = "Due Date"
+            }
+            // 
+            if (status == "1") {
+                ncard.classList.add("clicked")
+            }
+
+
+            ncardc1.append(nT1)
+            ncardc2.append(nT2)
+            ncardc3.append(nT3)
+            ncardc2.append(nP2)
+            ncardc3.append(nP3)
+            ncardc4.append(nT4)
+
+
+
+            ncard.append(ncardc1)
+            ncard.append(ncardc2)
+            ncard.append(ncardc3)
+            ncard.append(ncardc4)
+            notificationbox.append(ncard)
+
+            const notificationcards = document.querySelectorAll(
+                '.notification'
+            )
+
+            notificationcards.forEach(function (notify) {
+                console.log("ddddfgggg")
+                notify.addEventListener('click', function () {
+                    notify.classList.add("clicked")
+                })
+
+            })
+
+
+            const updateStatus = document.querySelectorAll(
+                '.updateStatus'
+            )
+
+            updateStatus.forEach(function (ustatus) {
+                console.log("dddaaaddddfgggg")
+                ustatus.addEventListener('click', function () {
+                    console.log("call ajax")
+                })
+
+            })
+
+        }
+
+        function seen() {
+            this.classList.add("clicked")
+        }
+
+
+        const btnk = document.querySelector(
+            '.btnk'
+        )
+
+
+        btnk.addEventListener('click', function () {
+            notificationcard("join Project", "music sana", "rahul", "join", "0", "1", "N0");
+        })
+
+        const updateStatus = document.querySelectorAll(
+            '.updateStatus'
+        )
+
+        updateStatus.forEach(function (ustatus) {
+            console.log("dddaaaddddfgggg")
+            ustatus.addEventListener('click', function () {
+                console.log("call ajax")
+            })
+
+        })
+
+        const notificationcards = document.querySelectorAll(
+            '.notification'
+        )
+
+        notificationcards.forEach(function (notify) {
+            console.log("ddddfgggg")
+            notify.addEventListener('click', function () {
+                notify.classList.add("clicked")
+            })
+
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script>
+      function myFunction() {
+         var element = document.body;
+         element.classList.toggle("dark-mode");
+      }
+            
+    </Script>
+</body>
+</html>

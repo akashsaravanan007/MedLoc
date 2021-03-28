@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+    <title>  Signup Form </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8487b2c089.js" crossorigin="anonymous"></script>
+    <%- include('./partials/login_css.ejs')  %>
+    <%- include('./partials/head.ejs')  %>
+    <style>
+         .login-box {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 800px;
+                    padding: 40px;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0,0,0,.8);
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+                }
+    </style>
+    </head>
+    <%- include('./partials/nav.ejs',{navlogout:navlogut})  %>
+    <body>
+      <div class="bg"></div>
+         <div class="login-box">
+          <h1 id="head">Welcome to <br>E-Medical</h1>
+           <h2>SIGN UP</h2>
+           <form action="register-user" method="POST">
+             <div class="user-box">
+               <input type="text" name="name" required="">
+               <label>Username</label>
+             </div>
+             <div class="user-box">
+                <input type="text" name="mailId" required="">
+                <label>Mailid</label>
+              </div>
+             <div class="user-box">
+               <input type="text" name="pharmacyName" required="">
+
+               <label>Pharmacy Name</label>
+             </div>
+             <div class="user-box">
+                <input type="text" name="address" required="">
+ 
+                <label>Pharmacy address</label>
+              </div>
+              <div class="user-box">
+                <input type="number" name="phone" required="">
+ 
+                <label>Phone</label>
+              </div>
+              <button type="submit" >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Register
+              </button>
+             <h4>Having an account?then<a href="login">LOGIN</a></h4>
+           </form>
+         </div>
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+         
+         <script>
+           function myFunction() {
+              var element = document.body;
+              element.classList.toggle("dark-mode");
+           }
+         </Script>
+    </body>
+    </html>

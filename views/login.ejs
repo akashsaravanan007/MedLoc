@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+    <title>  Signup Form </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8487b2c089.js" crossorigin="anonymous"></script>
+    <%- include('./partials/login_css.ejs')  %>
+    <%- include('./partials/head.ejs')  %>
+    <style>
+      .errbox{
+        border: solid;
+        border-color: red;
+        text-align: center;
+        transform: translateY(-100px);
+      }
+      .errbox h4{
+        color: red;
+
+      }
+
+    </style>
+    </head>
+    <body>
+      <%- include('./partials/nav.ejs',{navlogout:navlogut})  %>
+      <div class="bg"></div>
+         <div class="login-box">
+          <% if(loginError){ %> 
+            <div class="errbox">
+              <h4>Wrong id or password</h4>
+            </div>
+            <% } %>
+          <h1 id="head">Welcome to <br>E-Medical</h1>
+           <h2>SIGN UP</h2>
+           <form action="login" method="POST">
+             <div class="user-box">
+                <input type="text" name="mailId" required="">
+                <label>Mail-id</label>
+              </div>
+             <div class="user-box">
+               <input type="password" name="password" required="">
+
+               <label>Password</label>
+             </div>
+             <button type="submit" >
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               Login
+             </button>
+             <h4>New User?<a href="register">Register</a></h4>
+           </form>
+         </div>
+         <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script>
+      function myFunction() {
+         var element = document.body;
+         element.classList.toggle("dark-mode");
+      }
+    </Script>
+    </body>
+    </html>

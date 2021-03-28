@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Pharmacy</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8487b2c089.js" crossorigin="anonymous"></script>
+    <style>
+
+     body{
+
+        background: url("static/pharmacy-background.jpg") center;
+        background-size:cover;
+
+        
+        /* background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.603),
+			rgba(0, 0, 0, 0.753)
+		),
+		url("static/p10.jpg") no-repeat bottom; */
+	background-size: cover;
+     }
+
+      .dark{
+                padding: 25px;
+                background-color: white;
+                color: black;
+                font-size: 25px;
+            }
+      
+      .dark-mode {
+                    background-color: black;
+                    color: white;
+                 }
+      .mode{
+                background-color: rgba(17, 219, 207, 0.1);
+                border: 1px rgba(5, 226, 211, 0.911);
+                margin-top: 8%;
+            }
+        .dashboard{
+            width: 85%;
+            /* padding: 20px; */
+            background-color:rgba(5, 226, 211, 0.911);
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+        }
+
+        .datainput{
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+        }
+        .datainput div{
+            padding: 20px;
+
+        }
+
+        .head{
+            background-color: black;
+            margin: 2px;
+            padding: 5px;
+        }
+
+        .inpbox button {
+             transform: translateY(-20px);
+                position: relative;
+                display: inline-block;
+                padding: 10px 20px;
+                color: #ffffff;
+               background-color: black;
+                text-transform: uppercase;
+                font-weight: 600;
+                text-decoration: none;
+                transition: .5s;
+                letter-spacing: 4px;
+                margin-top: 40px;
+                overflow: hidden;
+                font-size: 18px;
+                }
+
+        ul{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .borders{
+            border-left: solid;
+            border-right: solid;
+            
+            border-color: rgba(121, 121, 121, 0.212);
+        }
+
+
+        li{
+          list-style: none; 
+        }
+        li h3{
+          
+            padding: 5px;
+        }
+        li div div{
+           width: 33%;
+           text-align: center;
+        }
+
+        .val{
+            background-color: rgb(255, 255, 255);
+            color: black;
+            margin: 4px;
+        }
+
+        .row{
+            display: flex;
+            flex-flow: row;
+        }
+        label{
+            color: rgb(255, 255, 255);
+        }
+
+        .inpbox{
+            background-color: rgba(5, 226, 211, 0.911);
+            /* padding: 5px; */
+        }
+
+        input{
+            width: 100%;
+        }
+
+        .hide{
+            display: none;
+        }
+        
+
+      .mode:hover{
+                    color: #fff;
+                 }
+        .btnm {
+                text-transform: uppercase;
+                background: rgba(5, 226, 211, 0.911);
+                color: rgb(29, 29, 29);
+                padding: 0.375rem 0.75rem;
+                display: inline-block;
+                border: none;
+               
+                font-size: 1rem;
+                font-weight: 700;
+                border: 2px solid rgb(24, 24, 24);
+                cursor: pointer;
+                box-shadow: 0 1px 3px rgba(24, 24, 24, 0.2);
+                margin: 10px;
+                margin-left: 0px;
+                border-radius: var(--radius-s);
+            }
+      </style>
+    
+    <%- include('./partials/head.ejs')  %>
+</head>
+<%- include('./partials/nav.ejs',{navlogout:navlogut})  %>
+<body>
+  
+    <div class="inpbox datainput">
+        <form action="dashboard" method="POST">
+            <div class=" row">
+           <div>
+               <label for="">Medicine Name</label>
+               <input type="text" name="medicineName">
+           </div>
+           <div>
+               <label for="">Chemical combination</label>
+               <input type="text" name="chemicalCombination">
+           </div>
+           <div>
+               <label for="cars">Status:</label>
+               <select id="cars" name="avalibility">
+                   <option value="OutOfStock">Out of Stock</option>
+                   <option value="Available">Available</option>
+               </select>
+           </div>
+           <div>
+            <button type="submit" >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                ADD
+              </button>
+           </div>
+       </div>
+       </form>
+    </div>
+    
+   
+    <div class="dashboard">
+        <ul class="dashboardUl">
+            <li>
+                <div class='row head'>
+                    <div>
+                        <h3>Medicine Name</h3>
+                    </div>
+                    <div>
+                        <h3>Chemical combination</h3>
+                    </div>
+                    <div>
+                         <h3>Status</h3>
+                    </div>
+                </div>
+            </li>
+            <!-- <li>
+                <div class='row val'>
+                    <div>
+                        <h4>Medicine Name</h4>
+                    </div>
+                    <div>
+                        <h4>Chemical combination</h4>
+                    </div>
+                    <div>
+                         <h4>Medicine Name</h4>
+                    </div>
+                </div>
+            </li> -->
+            <% if(list.length >0){ %>
+                <% list.forEach(lis =>{%>
+                    <li id="<%= lis.uid %> ">
+                        <div class='row val'>
+                            <div>
+                                <h4><%= lis.data.name %> </h4>
+                            </div>
+                            <div class="borders">
+                                <h4><%= lis.data.chemicalCombination %> </h4>
+                            </div>
+                            <div>
+                                <form action="dashboard-update" method="POST">
+                                <% if(lis.data.available == true) {%> 
+                                     <div style="margin-left: 100px;" >
+                                        <input  class="hide" type="text" name="uid" value="<%= lis.uid %>">
+                                         <div>
+                                            <select  name="aval" class="dropbox" >
+                                                <option value="OutOfStock">Out of Stock</option>
+                                                <option value="Available" selected>Available</option>
+                                            </select>
+                                         </div>
+                                        <div class="n4 hide">
+                                            <button type="submit" class="btnm">Change</button>
+                                        </div>
+                                     </div>
+                                 <% }else{ %> 
+                                    <div style="margin-left: 100px;" >
+                                        <input class="hide" type="text" name="uid" value="<%= lis.uid %>">
+                                        <div>
+                                           <select  name="aval" class="dropbox" >
+                                               <option value="OutOfStock" selected>Out of Stock</option>
+                                               <option value="Available" >Available</option>
+                                           </select>
+                                        </div>
+                                       <div class="n4 hide">
+                                           <button type="submit" class="btnm">Change</button>
+                                       </div>
+                                    </div>
+                                <% } %> 
+                                </form>
+                            </div>
+                           
+                        </div>
+                    </li>
+                    <% }) %>
+            <% } %> 
+
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script>
+      function myFunction() {
+         var element = document.body;
+         element.classList.toggle("dark-mode");
+      }
+
+      document.querySelectorAll(".dropbox").forEach((item) =>{
+        item.addEventListener('change',(event)=>{
+        // const result = item.querySelector('.n4')
+        item.parentElement.nextElementSibling.classList.remove('hide')
+        // console.log(item.parentElement.nextElementSibling)
+      })
+      })
+
+
+
+      
+    </Script>
+    
+</body>
+</html>
