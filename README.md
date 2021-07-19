@@ -17,7 +17,7 @@ This drawback can be overcome by using the concept of Recommendation where pharm
 
 - On providing the availability of medicines/drugs and offers to the nearby locality of the user we effectively supervise rational drug availability and dynamically monitor antimicrobial drugs available in real time. Thus we effectively strengthen E-pharmacy management.
 
-![Architecture](./architecture.jpg)
+![Architecture](https://github.com/balamurugan213/MedLoc/blob/main/architecture.JPG)
 
 ## Motivation
 
@@ -37,7 +37,7 @@ The web application is used by the retailer shop owner to register their parmacy
 
 **Git Branch** : web-server
 
-visit page: [https://medlocc.herokuapp.com/](https://www.example.com)
+visit page: [https://medlocc.herokuapp.com/](https://medlocc.herokuapp.com/)
 
 ## Mobile Application
 
